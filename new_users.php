@@ -11,6 +11,9 @@
         <b>User Password: </b><input type = "password" name="user_password" /><br />
         <input type="submit" name="user" value="Submit Now!" />
     </form>
+<!--Select Data starts here-->
+<h3><a href = "new_users.php?view">View Users:</a></h3>
+<!--Select Data ends here-->
 <!--MySQL Connection starts here-->
     <?php
     $con = mysqli_connect("localhost","root","","mytest"); //("server name", "username","password","databasename")
