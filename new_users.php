@@ -8,7 +8,7 @@
     <form action="new_users.php" method="post">
         <b>User Name: </b><input type = "text" name="user_name" /><br />
         <b>User Email: </b><input type = "text" name="user_email" /><br />
-        <b>User Password: </b><input type = "text" name="user_password" /><br />
+        <b>User Password: </b><input type = "password" name="user_password" /><br />
         <input type="submit" name="user" value="Submit Now!" />
     </form>
 <!--MySQL Connection starts here-->
@@ -21,13 +21,19 @@
     }
     //MySQL Connection ends here
 
-    //Insert data into table using PHP
+    //Insert data commands into table starts using PHP
     if (isset($_POST['user']))
     {
-        echo $user_name = $_POST['user_name'];
-        echo $user_email = $_POST['user_email'];
-        echo $user_password = $_POST['user_password'];
+        $user_name = $_POST['user_name'];
+        $user_email = $_POST['user_email'];
+        $user_password = $_POST['user_password'];
+
+        $query = "insert into new_user(user_name, user_email, user_password) value('$user_name','$user_email','$user_password')";
+
+        $insert_query = mysqli_query($con, $query);
     }
+
+    //Insert data commands into table ends using PHP
 
      ?>
 
